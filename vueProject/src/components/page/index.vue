@@ -1,87 +1,14 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <router-link to="./Bottom">跳转bottom</router-link>
-    <div @click="test">{{alert}}</div>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <!-- router-link跳转方式 -->
+    <!-- 使用路径,参数为router中声明的path -->
+    <router-link to="/home">Home</router-link>
+    <!-- 使用name属性,参数为router中声明的name -->
+    <router-link to="home">Home1</router-link>
+
+    <div @click="pushLiftCycle">跳转liftCycle</div>
+
   </div>
 </template>
 
@@ -90,14 +17,22 @@ export default {
   name: 'index',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      alert: '弹窗'
+      msg: 'Welcome to My App',
     }
   },
+  // 实例创建完成后
+  created () {
+    // 修改导航的文字
+    this.$emit("listenData","首页")
+  },
   methods: {
-    test () {
 
+    pushLiftCycle (){
+      // 参数为router中声明的path
+      this.$router.push('/liftCycle')
+      console.log("跳转声明周期界面")
     }
+    
   }
 }
 </script>

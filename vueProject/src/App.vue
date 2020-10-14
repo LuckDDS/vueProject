@@ -1,14 +1,17 @@
 <template>
   <!-- app.vue是所有界面加载的基础,这个界面除了router-view外写其他的东西都会存在于每个界面 -->
   <div id="app">
+
     <!-- 导航 -->
-    <div class="web-nav">我是头部</div>
+    <div class="web-nav">{{header}}</div>
     
     <!-- 所有的界面都在routerview里面加载的 -->
-    <router-view class="routerclass"/>
+    <!-- listenData子组件给父组件传值使用this.$emit("listenData","传值内容") -->
+    <router-view class="routerclass" v-on:listenData="changeapp"/>
     
     <!-- 组件嵌套组件 -->
     <webbottom/>
+
   </div>
 </template>
 
@@ -17,6 +20,17 @@
 import bottom from './components/subpage/Bottom'
 export default {
   name: 'App',
+  data () {
+    return{
+      header: '我是头部'
+    }
+  },
+  methods: {
+    // 数据来源自子组件,子组件给父组件传值
+    changeapp(data){
+      this.header = data
+    }
+  },
   // 将组件命名为webbottom使用
   components: {
     webbottom: bottom
@@ -25,16 +39,14 @@ export default {
 </script>
 
 <style>
-/* 干掉默认边距 */
-body{
-  margin: 0;
-  padding: 0;
-}
-/*  */
+/* 设置router-view框的大小样式 */
 .routerclass{
   width: 100%;
   min-height: calc(100vh - 160px);
+  margin: 0;
+  padding: 0;
 }
+/* 导航的样式 */
 .web-nav{
   width: 100%;
   height: 60px;
@@ -43,7 +55,7 @@ body{
   text-align: center;
   color: white;
 }
-#app {
+#app,body{
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
