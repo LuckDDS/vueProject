@@ -1,7 +1,7 @@
 
 <template>
   <div class="bottom">
-    底部模板
+    我是底部
   </div>
 </template>
 
@@ -14,7 +14,7 @@ export default{
 <style>
 .bottom{
   width: 100%;
-  height: 300px;
+  height: 100px;
   background-color: aqua;
 }
 </style>
