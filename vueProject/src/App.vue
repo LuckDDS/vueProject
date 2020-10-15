@@ -4,13 +4,12 @@
 
     <!-- 导航 -->
     <div class="web-nav">{{header}}</div>
-    
     <!-- 所有的界面都在routerview里面加载的 -->
     <!-- listenData子组件给父组件传值使用this.$emit("listenData","传值内容") -->
     <router-view class="routerclass" v-on:listenData="changeapp"/>
-    
-    <!-- 组件嵌套组件 -->
-    <webbottom/>
+    <!-- 组件嵌套组件,父组件调用子组件方法和传参 -->
+    <div @click="invokeSubFun">点击调用webbottom的子组件的方法</div>
+    <webbottom ref="webbottom" :subMsgFromSuper="superMsg"/>
 
   </div>
 </template>
@@ -21,14 +20,19 @@ import bottom from './components/subpage/Bottom'
 export default {
   name: 'App',
   data () {
-    return{
-      header: '我是头部'
+    return {
+      header: '我是头部',
+      superMsg: '父组件的数据传递到子组件了'
     }
   },
   methods: {
     // 数据来源自子组件,子组件给父组件传值
-    changeapp(data){
+    changeapp (data) {
       this.header = data
+    },
+    // 父类调用子类的方法
+    invokeSubFun () {
+      this.$refs.webbottom.invokeFromSuper()
     }
   },
   // 将组件命名为webbottom使用

@@ -6,7 +6,6 @@
     <router-link to="/home">Home</router-link>
     <!-- 使用name属性,参数为router中声明的name -->
     <router-link to="home">Home1</router-link>
-
     <div @click="pushLiftCycle">跳转liftCycle</div>
 
   </div>
@@ -17,22 +16,20 @@ export default {
   name: 'index',
   data () {
     return {
-      msg: 'Welcome to My App',
+      msg: 'Welcome to My App'
     }
   },
   // 实例创建完成后
   created () {
     // 修改导航的文字
-    this.$emit("listenData","首页")
+    this.$emit('listenData', '首页')
   },
   methods: {
-
-    pushLiftCycle (){
-      // 参数为router中声明的path
+    pushLiftCycle () {
+      // 参数是router中声明的path
       this.$router.push('/liftCycle')
-      console.log("跳转声明周期界面")
+      console.log('跳转声明周期界面')
     }
-    
   }
 }
 </script>

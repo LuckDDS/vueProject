@@ -7,7 +7,9 @@
 
 <script>
 export default{
-
+  created () {
+    this.$emit('listenData', '声明周期')
+  }
 }
 </script>
 
