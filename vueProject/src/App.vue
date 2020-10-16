@@ -35,6 +35,9 @@ export default {
       this.$refs.webbottom.invokeFromSuper()
     }
   },
+  mounted () {
+    console.log(this)
+  },
   // 将组件命名为webbottom使用
   components: {
     webbottom: bottom

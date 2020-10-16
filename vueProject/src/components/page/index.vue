@@ -26,7 +26,8 @@ export default {
     console.log('created')
   },
   mounted () {
-    console.log('mounted')
+    // console.log(this.$router)
+    // console.log(this.$route)
   },
   methods: {
     pushLiftCycle () {

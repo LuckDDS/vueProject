@@ -19,7 +19,12 @@ export default{
       console.log('这是父类调用子类的方法')
     }
   },
-  props: ['subMsgFromSuper']
+  props: ['subMsgFromSuper'],
+  mounted () {
+    console.log(this.$router)
+    console.log(this.$route)
+    console.log(this)
+  }
 }
 </script>
 
