@@ -7,8 +7,20 @@
 
 <script>
 export default{
+  // 一个实例被创建之前执行代码
+  beforeCreate () {
+
+  },
+  // 一个实例被创建之后执行代码
   created () {
-    this.$emit('listenData', '声明周期')
+    this.$emit('listenData', '生命周期')
+  },
+  // 在挂载开始之前被调用
+  beforeMount () {
+
+  },
+  mounted () {
+
   }
 }
 </script>

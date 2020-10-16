@@ -23,14 +23,19 @@ export default {
   created () {
     // 修改导航的文字
     this.$emit('listenData', '首页')
+    console.log('created')
+  },
+  mounted () {
+    console.log('mounted')
   },
   methods: {
     pushLiftCycle () {
       // 参数是router中声明的path
       this.$router.push('/liftCycle')
-      console.log('跳转声明周期界面')
+      console.log('跳转生命周期界面')
     }
   }
+
 }
 </script>
 
