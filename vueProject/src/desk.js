@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import Desk from './Desk.vue'
 import Router from 'vue-router'
-import desktop from './components/page/desktop.vue'
+import desktop from './components/page/desk/desktop.vue'
 Vue.config.productionTip = false
 // 多页面应用最后一步另起一个router不和之前的router公用
 Vue.use(Router)

@@ -1,9 +1,9 @@
 
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '../components/page/index.vue'
-import home from '../components/page/home.vue'
-import liftCycle from '../components/page/liftcycle.vue'
+import index from '../components/page/index/index.vue'
+import home from '../components/page/index/home.vue'
+import liftCycle from '../components/page/index/liftcycle.vue'
 Vue.use(Router)
 
 export default new Router({

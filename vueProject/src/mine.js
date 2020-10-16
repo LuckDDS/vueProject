@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import Mine from './Mine.vue'
-import Minetop from '../src/components/page/minetop.vue'
+import Minetop from '../src/components/page/mine/minetop.vue'
 import Router from 'vue-router'
 
 Vue.use(Router)

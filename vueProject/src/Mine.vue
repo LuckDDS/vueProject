@@ -4,7 +4,7 @@
 
     <!-- 导航 -->
     <div class="web-nav">{{header}}</div>
-    <!-- 所有的界面都在routerview里面加载的 -->
+    <!-- 所有的界面都在routerview里面加载的,这是个多页面工程这个router-view是在mine.js中自定义的和router/index.js中的router-view是两码事 -->
     <router-view class="routerclass" />
   </div>
 </template>
