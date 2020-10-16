@@ -6,7 +6,8 @@
     <router-link to="/home">Home</router-link>
     <!-- 使用name属性,参数为router中声明的name -->
     <router-link to="home">Home1</router-link>
-    <div @click="pushLiftCycle">跳转liftCycle</div>
+    <div @click="pushDesktop">跳转desktop.html</div>
+    <div @click="pushMinetop">跳转minetop.html</div>
 
   </div>
 </template>
@@ -34,9 +35,16 @@ export default {
       // 参数是router中声明的path
       this.$router.push('/liftCycle')
       console.log('跳转生命周期界面')
+    },
+    pushDesktop () {
+      // 挂载了子组件
+      window.location.href = 'http://localhost:8080/desk.html#/desk/'
+    },
+    pushMinetop () {
+      // 未挂载子组件
+      window.location.href = 'http://localhost:8080/mine.html'
     }
   }
-
 }
 </script>
 

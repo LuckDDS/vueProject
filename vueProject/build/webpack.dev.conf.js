@@ -52,10 +52,25 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
+    // 多页面应用配置第三步,第四步是修改config/index.js下的配置
+    // 在chunks那里的app指的是webpack.base.conf.js的 entry 那里与之对应的变量名
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true
+      inject: true,
+      chunks: ['app']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'desk.html',
+      template: 'desk.html',
+      inject: true,
+      chunks: ['desk']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'mine.html',
+      template: 'mine.html',
+      inject: true,
+      chunks: ['mine']
     }),
     // copy custom static assets
     new CopyWebpackPlugin([

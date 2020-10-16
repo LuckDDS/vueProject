@@ -46,8 +46,10 @@ module.exports = {
 
   build: {
     // Template for index.html
+    // 多页面应用配置第四步生成文件的路径,第五步配置生产环境webpack.prod.conf
     index: path.resolve(__dirname, '../dist/index.html'),
-
+    desk: path.resolve(__dirname, '../dist/desk.html'),
+    mine: path.resolve(__dirname, '../dist/mine.html'),
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',

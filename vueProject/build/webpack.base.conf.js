@@ -21,8 +21,11 @@ const createLintingRule = () => ({
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
+  // 多页面应用配置第一步,第二步是创建desk.js和mine.js及html和vue相关文件
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    desk: './src/desk.js',
+    mine: './src/mine.js'
   },
   output: {
     path: config.build.assetsRoot,
