@@ -20,7 +20,10 @@ export default{
 
   },
   mounted () {
-
+    var arr = [21, 4, 2, 434, 123, 5343, 12, 53, 123, 1, 3, 3, 45, 1, 2, 34, 5, 6, 8, 93, 123, 34, 435, 1, 2, 3, 332, 123, 12, 143, 2, 44, 312, 432]
+    this.quickSort(arr, 0, arr.length - 1)
+  },
+  methods: {
   }
 }
 </script>

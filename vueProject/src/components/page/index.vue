@@ -6,6 +6,8 @@
     <router-link to="/home">Home</router-link>
     <!-- 使用name属性,参数为router中声明的name -->
     <router-link to="home">Home1</router-link>
+    <router-link to="algorithmic">算法</router-link>
+    <router-link to="temp">算法练习</router-link>
     <div @click="pushLiftCycle">跳转liftCycle</div>
 
   </div>
@@ -36,7 +38,6 @@ export default {
       console.log('跳转生命周期界面')
     }
   }
-
 }
 </script>
 
